@@ -1,168 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- META -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="uisual" content="Made with Uisual (uisual.com)" />
+    <meta name="author" content="#" />
+    <meta name="description" content="#" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="robots" content="index, follow" />
+    <!-- SPEED -->
+    <link rel="preconnect" href="https://res.cloudinary.com" />
+    <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <!-- LINK -->
+    <link rel="me" href="#" />
+    <link rel="canonical" href="#" />
+    <link rel="icon" type="image/png" href="#" sizes="48x48" />
+    <!-- PERFORMANCE -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    />
+    <link rel="preload" as="style" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="dialog.css" />
 
-<head>
-  <!-- META -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="uisual" content="Made with Uisual (uisual.com)">
-  <meta name="author" content="#">
-  <meta name="description" content="#">
-  <meta name="referrer" content="unsafe-url">
-  <meta name="robots" content="index, follow">
-  <!-- SPEED -->
-  <link rel="preconnect" href="https://res.cloudinary.com">
-  <link rel="dns-prefetch" href="https://res.cloudinary.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <!-- LINK -->
-  <link rel="me" href="#">
-  <link rel="canonical" href="#">
-  <link rel="icon" type="image/png" href="#" sizes="48x48">
-  <!-- PERFORMANCE -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
-  <link rel="preload" as="style" href="style.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="dialog.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="assets/js/SendWelcomeMail.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-database.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-  <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-database.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="sweetalert2.all.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/js/jquery-2.2.1.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/sketch.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!-- TITLE -->
+    <title>Qwiki Waiting List</title>
+  </head>
 
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
-    id="bootstrap-css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="assets/js/jquery-2.2.1.min.js"></script>
-  <script src="http://maps.google.com/maps/api/js"></script>
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/js/jquery.validate.min.js"></script>
-  <script src="assets/js/jquery.magnific-popup.min.js"></script>
-  <script src="assets/js/sketch.min.js"></script>
-  <script src="assets/js/custom.js"></script>
-  <!-- TITLE -->
-  <title>Qwiki Waiting List</title>
-</head>
+  <!-- <body> -->
+  <!-- <img src="landArtboard.png" /> -->
 
-<!-- <body> -->
-<!-- <img src="landArtboard.png" /> -->
+  <body
+    style="background-image: url(landArtboard.png)"
+    id="background-content"
+    background-content
+  >
+    <div class="notify"><span id="notifyType" x></span></div>
 
-<body style="background-image: url(landArtboard.png);" id="background-content" background-content>
-  <div class="notify"><span id="notifyType" x></span></div>
+    <header role="banner" class="">
+      <div class=" ">
+        <div class="ui-section-header__layout ui-layout-flex">
+          <!-- LOGO -->
 
+          <a href="#" role="link" aria-label="#">
+            <!-- <img style="width: 100px; height: 60px;" src="logo.png" loading="lazy" alt="#"> -->
 
-  <header role="banner" class="">
-    <div class=" ">
-      <div class="ui-section-header__layout ui-layout-flex">
-        <!-- LOGO -->
-
-        <a href="#" role="link" aria-label="#">
-          <!-- <img style="width: 100px; height: 60px;" src="logo.png" loading="lazy" alt="#"> -->
-
-          <!-- <svg viewBox="0 0 18 18" height="18" width="18" role="img" aria-label="#">
+            <!-- <svg viewBox="0 0 18 18" height="18" width="18" role="img" aria-label="#">
             <path fill="#353535" d="M0 0h4.5v9a4.5 4.5 0 109 0V6H18v3A9 9 0 110 9V0zm18 4.5V0h-4.5v4.5H18z" />
           </svg> -->
-        </a>
-
+          </a>
+        </div>
       </div>
-    </div>
-  </header>
-  <main role="main">
-    <section class="">
+    </header>
+    <main role="main">
+      <section class="">
+        <div class="ui-layout-container">
+          <div class="ui-layout-column-6 ui-layout-column-center">
+            <!-- LOGO -->
+            <br />
+            <a
+              href="#"
+              role="link"
+              aria-label="#"
+              class="ui-section-hero--logo"
+            >
+              <img
+                style="width: 150px; height: 90px"
+                src="logo.png"
+                loading="lazy"
+                alt="#"
+              />
 
-      <div class="ui-layout-container">
-        <div class="ui-layout-column-6 ui-layout-column-center">
-          <!-- LOGO -->
-          <br>
-          <a href="#" role="link" aria-label="#" class="ui-section-hero--logo">
-            <img style="width: 150px; height: 90px;" src="logo.png" loading="lazy" alt="#">
-
-            <!-- <svg viewBox="0 0 48 48" height="48" width="48">
+              <!-- <svg viewBox="0 0 48 48" height="48" width="48">
               <rect fill="#353535" height="48" width="48" rx="8" />
               <path fill="#FFF"
                 d="M12 13h6v12a6 6 0 0012 0v-4h6v4c0 6.627-5.373 12-12 12s-12-5.373-12-12V13zm24 6v-6h-6v6h6z" />
             </svg> -->
-          </a>
-          <!-- COPYWRITING -->
-          <div class="ui-section-hero--content">
-            <h1 style="text-align: center;">Get early access to Qwiki.</h1>
-            <p style="text-align: center;" class="ui-text-intro">Join our exclusive waiting list to be the first to
-              hear
-              when we launch and enjoy
-              massive discounts.</p>
-            <!-- CTA -->
-            <div class="ui-component-cta ui-layout-flex">
-              <form onsubmit="event.preventDefault()" class="ui-component-form ui-layout-grid ui-layout-column-4">
-                <input name="name" id="name" type="name" placeholder="Name"
-                  class="ui-component-input ui-component-input-medium" required>
-
-              </form>
+            </a>
+            <!-- COPYWRITING -->
+            <div class="ui-section-hero--content">
+              <h1 style="text-align: center">Get early access to Qwiki.</h1>
+              <p style="text-align: center" class="ui-text-intro">
+                Join our exclusive waiting list to be the first to hear when we
+                launch and enjoy massive discounts.
+              </p>
+              <!-- CTA -->
+              <div class="ui-component-cta ui-layout-flex">
+                <form
+                  onsubmit="event.preventDefault()"
+                  class="ui-component-form ui-layout-grid ui-layout-column-4"
+                >
+                  <input
+                    name="name"
+                    value="Patrick Joel"
+                    id="name"
+                    type="name"
+                    placeholder="Name"
+                    class="ui-component-input ui-component-input-medium"
+                    required
+                  />
+                </form>
+              </div>
+              <br />
+              <div class="ui-component-cta ui-layout-flex">
+                <form
+                  onsubmit="event.preventDefault()"
+                  class="ui-component-form ui-layout-grid ui-layout-column-4"
+                >
+                  <input
+                    name="email"
+                    id="email"
+                    type="email"
+                    value="joekenpat@gmail.com"
+                    placeholder="Email"
+                    class="ui-component-input ui-component-input-medium"
+                    required
+                  />
+                  <button
+                    type="button"
+                    onclick="submitForm()"
+                    class="ui-component-button ui-component-button-medium ui-component-button-primary"
+                  >
+                    Join Waitlist
+                  </button>
+                </form>
+                <p class="ui-text-note">
+                  <small>Available on Android and iOS.</small>
+                </p>
+              </div>
             </div>
-            <br>
-            <div class="ui-component-cta ui-layout-flex">
-              <form onsubmit="event.preventDefault()" class="ui-component-form ui-layout-grid ui-layout-column-4">
+            <!-- IMAGE -->
 
-                <input name="email" id="email" type="email" placeholder="Email"
-                  class="ui-component-input ui-component-input-medium" required>
-                <button type="button" onclick="submitForm()"
-                  class="ui-component-button ui-component-button-medium ui-component-button-primary">Join
-                  Waitlist</button>
-              </form>
-              <p class="ui-text-note"><small>Available on Android and iOS.</small></p>
+            <img src="image.png" loading="lazy" alt="#" />
+            <div class="background-wrapper">
+              <div id="background-content"></div>
             </div>
-          </div>
-          <!-- IMAGE -->
-
-          <img src="image.png" loading="lazy" alt="#">
-          <div class="background-wrapper">
-            <div id="background-content"></div>
           </div>
         </div>
-      </div>
+      </section>
 
-    </section>
+      <script>
+        //Firebase code
+        //Config values to ba adapted!
+        var config = {
+          apiKey: "AIzaSyC6DbGuzPRrOVmeuX5X2sQO-45N1OKo_-M",
+          authDomain: "carryam-4d120.firebaseapp.com",
+          databaseURL: "https://carryam-4d120.firebaseio.com",
+          projectId: "carryam-4d120",
+          storageBucket: "carryam-4d120.appspot.com",
+        };
 
+        firebase.initializeApp(config);
 
-    <script>
-      //Firebase code
-      //Config values to ba adapted!
-      var config = {
-        apiKey: "AIzaSyC6DbGuzPRrOVmeuX5X2sQO-45N1OKo_-M",
-        authDomain: "carryam-4d120.firebaseapp.com",
-        databaseURL: "https://carryam-4d120.firebaseio.com",
-        projectId: "carryam-4d120",
-        storageBucket: "carryam-4d120.appspot.com",
-      };
+        var rootRef = firebase.database().ref("subscribers");
+        const submitForm = (e) => {
+          if (
+            document.getElementById("name").value.length != 0 &&
+            document.getElementById("email").value.length != 0
+          ) {
+            rootRef
+              .push({
+                email: document.getElementById("email").value,
+                name: document.getElementById("name").value,
+              })
+              .then((res) => {
+                console.log("showing success modal");
+                SendWelcomeMail(
+                  document.getElementById("email").value,
+                  document.getElementById("name").value
+                );
+                // $('#modal-contact-us').modal('show')
+                $(".notify").toggleClass("active");
+                $("#notifyType").toggleClass("success");
+                setTimeout(function () {
+                  $(".notify").removeClass("active");
+                  $("#notifyType").removeClass("success");
+                }, 3000);
+              })
+              .catch((err) => {
+                console.log("showing error modal");
+                // $('#modal-contact-us').modal('show')
+                $(".notifyFailure").toggleClass("active");
+                $("#notifyType").toggleClass("failure");
 
-      firebase.initializeApp(config);
+                setTimeout(function () {
+                  $(".notifyFailure").removeClass("active");
+                  $("#notifyType").removeClass("failure");
+                }, 3000);
 
-      var rootRef = firebase.database().ref('subscribers');
-      const submitForm = (e) => {
-        if (document.getElementById("name").value.length != 0 && document.getElementById("email").value.length != 0) {
+                // Swal.fire({
+                //   title: 'Oops...',
+                //   text: 'Something went wrong!',
+                //   showConfirmButton: false, showCloseButton: true
 
-          rootRef.push({
-            "email": document.getElementById("email").value,
-            "name": document.getElementById("name").value
-          }).then((res) => {
-            console.log("showing success modal")
-            // $('#modal-contact-us').modal('show')
-            $(".notify").toggleClass("active");
-            $("#notifyType").toggleClass("success");
-
-            setTimeout(function () {
-              $(".notify").removeClass("active");
-              $("#notifyType").removeClass("success");
-            }, 3000);
-          }).catch((err) => {
-            console.log("showing error modal")
-            // $('#modal-contact-us').modal('show')
+                // })
+              });
+          } else {
+            // Swal.fire({
+            //   title: 'Oops...',
+            //   text: 'You have an empty field',
+            //   buttons: true,
+            //   showConfirmButton: false, showCloseButton: true
+            // })
             $(".notifyFailure").toggleClass("active");
             $("#notifyType").toggleClass("failure");
 
@@ -170,131 +240,138 @@
               $(".notifyFailure").removeClass("active");
               $("#notifyType").removeClass("failure");
             }, 3000);
-
-            // Swal.fire({
-            //   title: 'Oops...',
-            //   text: 'Something went wrong!',
-            //   showConfirmButton: false, showCloseButton: true
-
-            // })
-          });
-        } else {
-          // Swal.fire({
-          //   title: 'Oops...',
-          //   text: 'You have an empty field',
-          //   buttons: true,
-          //   showConfirmButton: false, showCloseButton: true
-          // })
-          $(".notifyFailure").toggleClass("active");
-          $("#notifyType").toggleClass("failure");
-
-          setTimeout(function () {
-            $(".notifyFailure").removeClass("active");
-            $("#notifyType").removeClass("failure");
-          }, 3000);
-        }
-      } 
-    </script>
-    <script>
-      //  Map
-      var latitude = 34.038405;
-      var longitude = -117.946944;
-      var markerImage = "assets/img/map-marker.png";
-      var mapTheme = "light";
-      var mapElement = "map";
-
-      $(".modal").on("shown.bs.modal", function (e) {
-        google.maps.event.addDomListener(window, 'load', simpleMap(latitude, longitude, markerImage, mapTheme, mapElement));
-      });
-
-      // Background
-      var COLOURS = ['#a3184d', '#A7EBCA', '#FFFFFF', '#ff6767', '#a3184d'];
-      var radius = 0;
-      var randomColor = 0;
-
-      Sketch.create({
-
-        container: document.getElementById('background-content'),
-        autoclear: false,
-        retina: 'auto',
-
-        update: function () {
-          radius = 2 + abs(sin(this.millis * 0.003) * 50);
-        },
-
-        click: function () {
-          randomColor = parseInt(0 + (COLOURS.length - 0) * Math.random(), 10);
-        },
-
-        touchmove: function () {
-
-          for (var i = this.touches.length - 1, touch; i >= 0; i--) {
-
-            touch = this.touches[i];
-
-            this.lineCap = 'round';
-            this.lineJoin = 'round';
-            this.fillStyle = this.strokeStyle = COLOURS[randomColor % COLOURS.length];
-            this.lineWidth = radius;
-
-            this.beginPath();
-            this.moveTo(touch.ox, touch.oy);
-            this.lineTo(touch.x, touch.y);
-            this.stroke();
           }
-        }
-      });
-    </script>
-  </main>
-  <footer role="contentinfo" class="ui-section-footer">
-    <div class="notifyFailure"><span id="notifyType" class=""></span>
-      <br>
-      <p>Oh no! Something didn't go as planned</p>
-      <br>
+        };
+      </script>
+      <script>
+        //  Map
+        var latitude = 34.038405;
+        var longitude = -117.946944;
+        var markerImage = "assets/img/map-marker.png";
+        var mapTheme = "light";
+        var mapElement = "map";
 
-    </div>
+        $(".modal").on("shown.bs.modal", function (e) {
+          google.maps.event.addDomListener(
+            window,
+            "load",
+            simpleMap(latitude, longitude, markerImage, mapTheme, mapElement)
+          );
+        });
 
-    <div class="ui-layout-container">
-      <div class="ui-section-footer__layout ui-layout-flex">
-        <!-- COPYRIGHT -->
-        <!-- <p class="ui-section-footer--copyright ui-text-note"><small>&copy; 2021 Qwiki</small></p> -->
-        <!-- MENU -->
-        <!-- MENU -->
-        <!-- <a href="#" role="link" aria-label="#"> -->
-        <a>
+        // Background
+        var COLOURS = ["#a3184d", "#A7EBCA", "#FFFFFF", "#ff6767", "#a3184d"];
+        var radius = 0;
+        var randomColor = 0;
 
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#900c3e" viewBox="0 0 24 24">
-            <path
-              d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-          </svg>
-        </a>
-        <a href="https://instagram.com/qwiki.ng" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#900c3e" viewBox="0 0 24 24">
-            <path
-              d="M15.233 5.488c-.843-.038-1.097-.046-3.233-.046s-2.389.008-3.232.046c-2.17.099-3.181 1.127-3.279 3.279-.039.844-.048 1.097-.048 3.233s.009 2.389.047 3.233c.099 2.148 1.106 3.18 3.279 3.279.843.038 1.097.047 3.233.047 2.137 0 2.39-.008 3.233-.046 2.17-.099 3.18-1.129 3.279-3.279.038-.844.046-1.097.046-3.233s-.008-2.389-.046-3.232c-.099-2.153-1.111-3.182-3.279-3.281zm-3.233 10.62c-2.269 0-4.108-1.839-4.108-4.108 0-2.269 1.84-4.108 4.108-4.108s4.108 1.839 4.108 4.108c0 2.269-1.839 4.108-4.108 4.108zm4.271-7.418c-.53 0-.96-.43-.96-.96s.43-.96.96-.96.96.43.96.96-.43.96-.96.96zm-1.604 3.31c0 1.473-1.194 2.667-2.667 2.667s-2.667-1.194-2.667-2.667c0-1.473 1.194-2.667 2.667-2.667s2.667 1.194 2.667 2.667zm4.333-12h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm.952 15.298c-.132 2.909-1.751 4.521-4.653 4.654-.854.039-1.126.048-3.299.048s-2.444-.009-3.298-.048c-2.908-.133-4.52-1.748-4.654-4.654-.039-.853-.048-1.125-.048-3.298 0-2.172.009-2.445.048-3.298.134-2.908 1.748-4.521 4.654-4.653.854-.04 1.125-.049 3.298-.049s2.445.009 3.299.048c2.908.133 4.523 1.751 4.653 4.653.039.854.048 1.127.048 3.299 0 2.173-.009 2.445-.048 3.298z" />
-          </svg></a>
-        <a href="https://www.linkedin.com/company/myqwiki-ng" target="_blank">
+        Sketch.create({
+          container: document.getElementById("background-content"),
+          autoclear: false,
+          retina: "auto",
 
-          <svg xmlns="http://www.w3.org/2000/svg" fill="#900c3e" width="18" height="18" viewBox="0 0 24 24">
-            <path
-              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-          </svg> </a>
+          update: function () {
+            radius = 2 + abs(sin(this.millis * 0.003) * 50);
+          },
 
-        <a>
+          click: function () {
+            randomColor = parseInt(
+              0 + (COLOURS.length - 0) * Math.random(),
+              10
+            );
+          },
 
-          <svg xmlns="http://www.w3.org/2000/svg" fill="#900c3e" width="18" height="18" viewBox="0 0 24 24">
-            <path
-              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-3 7h-1.924c-.615 0-1.076.252-1.076.889v1.111h3l-.238 3h-2.762v8h-3v-8h-2v-3h2v-1.923c0-2.022 1.064-3.077 3.461-3.077h2.539v3z" />
-          </svg> </a>
-        <!-- </a> -->
-        <!-- <a href="#" role="link" aria-label="#" class="ui-text-note"><small>Order a Ride</small></a>
+          touchmove: function () {
+            for (var i = this.touches.length - 1, touch; i >= 0; i--) {
+              touch = this.touches[i];
+
+              this.lineCap = "round";
+              this.lineJoin = "round";
+              this.fillStyle = this.strokeStyle =
+                COLOURS[randomColor % COLOURS.length];
+              this.lineWidth = radius;
+
+              this.beginPath();
+              this.moveTo(touch.ox, touch.oy);
+              this.lineTo(touch.x, touch.y);
+              this.stroke();
+            }
+          },
+        });
+      </script>
+    </main>
+    <footer role="contentinfo" class="ui-section-footer">
+      <div class="notifyFailure">
+        <span id="notifyType" class=""></span>
+        <br />
+        <p>Oh no! Something didn't go as planned</p>
+        <br />
+      </div>
+
+      <div class="ui-layout-container">
+        <div class="ui-section-footer__layout ui-layout-flex">
+          <!-- COPYRIGHT -->
+          <!-- <p class="ui-section-footer--copyright ui-text-note"><small>&copy; 2021 Qwiki</small></p> -->
+          <!-- MENU -->
+          <!-- MENU -->
+          <!-- <a href="#" role="link" aria-label="#"> -->
+          <a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              fill="#900c3e"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+              />
+            </svg>
+          </a>
+          <a href="https://instagram.com/qwiki.ng" target="_blank">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              fill="#900c3e"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M15.233 5.488c-.843-.038-1.097-.046-3.233-.046s-2.389.008-3.232.046c-2.17.099-3.181 1.127-3.279 3.279-.039.844-.048 1.097-.048 3.233s.009 2.389.047 3.233c.099 2.148 1.106 3.18 3.279 3.279.843.038 1.097.047 3.233.047 2.137 0 2.39-.008 3.233-.046 2.17-.099 3.18-1.129 3.279-3.279.038-.844.046-1.097.046-3.233s-.008-2.389-.046-3.232c-.099-2.153-1.111-3.182-3.279-3.281zm-3.233 10.62c-2.269 0-4.108-1.839-4.108-4.108 0-2.269 1.84-4.108 4.108-4.108s4.108 1.839 4.108 4.108c0 2.269-1.839 4.108-4.108 4.108zm4.271-7.418c-.53 0-.96-.43-.96-.96s.43-.96.96-.96.96.43.96.96-.43.96-.96.96zm-1.604 3.31c0 1.473-1.194 2.667-2.667 2.667s-2.667-1.194-2.667-2.667c0-1.473 1.194-2.667 2.667-2.667s2.667 1.194 2.667 2.667zm4.333-12h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm.952 15.298c-.132 2.909-1.751 4.521-4.653 4.654-.854.039-1.126.048-3.299.048s-2.444-.009-3.298-.048c-2.908-.133-4.52-1.748-4.654-4.654-.039-.853-.048-1.125-.048-3.298 0-2.172.009-2.445.048-3.298.134-2.908 1.748-4.521 4.654-4.653.854-.04 1.125-.049 3.298-.049s2.445.009 3.299.048c2.908.133 4.523 1.751 4.653 4.653.039.854.048 1.127.048 3.299 0 2.173-.009 2.445-.048 3.298z"
+              /></svg
+          ></a>
+          <a href="https://www.linkedin.com/company/myqwiki-ng" target="_blank">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#900c3e"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+              />
+            </svg>
+          </a>
+
+          <a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#900c3e"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-3 7h-1.924c-.615 0-1.076.252-1.076.889v1.111h3l-.238 3h-2.762v8h-3v-8h-2v-3h2v-1.923c0-2.022 1.064-3.077 3.461-3.077h2.539v3z"
+              />
+            </svg>
+          </a>
+          <!-- </a> -->
+          <!-- <a href="#" role="link" aria-label="#" class="ui-text-note"><small>Order a Ride</small></a>
         <a href="#" role="link" aria-label="#" class="ui-text-note"><small>Become a Rider</small></a>
         <a href="#" role="link" aria-label="#" class="ui-text-note"><small>Terms</small></a> -->
+        </div>
       </div>
-    </div>
-  </footer>
-
-
-</body>
-
+    </footer>
+  </body>
 </html>
