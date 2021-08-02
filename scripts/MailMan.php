@@ -26,7 +26,7 @@ function SendWelcomeMail($from, $to, $subject = "Welcome to Qwiki!")
         $mail->Password = $_ENV["MAIL_PASSWORD"];
         $mail->SMTPSecure = 'tls';
         $mail->Port = $_ENV["MAIL_PORT"];
-        $mail->SMTPDebug = 3;
+        // $mail->SMTPDebug = 3;
         $mail->setFrom($_ENV["FROM_EMAIL"], $_ENV["FROM_NAME"]);
         $mail->addAddress($to["email"], $to["name"]);
         $mail->isHTML(true);
