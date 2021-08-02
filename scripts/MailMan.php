@@ -18,6 +18,7 @@ function SendWelcomeMail($from, $to, $subject = "Welcome to Qwiki!")
     //Create an instance; passing `true` enables exception
     try {
         $mail = new PHPMailer(true);
+        $mail->CharSet = "UTF-8";
         $mail->Host = $_ENV["MAIL_HOST"];
         $mail->isSMTP();
         $mail->SMTPAuth = true;
