@@ -219,7 +219,7 @@ $dotenv->required(['APP_URL']);
                                                     <table width="100%" cellspacing="0" cellpadding="0">
                                                         <tr>
                                                             <td class="header header--left" style="padding: 20px 10px;" align="center">
-                                                                <a href="#"><img class="header__logo" src="<?php echo $_ENV['APP_URL'] . "logo.png"; ?>" alt="Firefox" style="display: block; border: 0;" width="100" height="59"></a>
+                                                                <a href="#"><img class="header__logo" src="<?php echo $_ENV['APP_URL'] . "logo.png"; ?>" alt="logo" style="display: block; border: 0;" width="100" height="59"></a>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -241,7 +241,7 @@ $dotenv->required(['APP_URL']);
                                                                 <table cellspacing="0" cellpadding="0">
                                                                     <!-- <tr>
                                             <td class="scalable-image" width="640" align="center">
-                                            <a href="#"><img src="<?php echo $_ENV['APP_URL'] . "landArtboard.png"; ?>" alt="" style="display: block; border: 0; max-width: 100%; height: auto;" width="640"></a>
+                                            <a href="#"><img src="<?php echo $_ENV['APP_URL'] . "landArtboard.png"; ?>" alt="landing art" style="display: block; border: 0; max-width: 100%; height: auto;" width="640"></a>
                                             </td>
                                         </tr> -->
                                                                     <tr>
@@ -333,7 +333,7 @@ $dotenv->required(['APP_URL']);
                                         <br>
                                         <br>
                                         <br>
-                                        <a href="#" target="_blank"><img src="<?php echo $_ENV['APP_URL'] . "logo.png"; ?>" alt="Mozilla" style="display: block; border: 0;" width="100"></a>
+                                        <a href="#" target="_blank"><img src="<?php echo $_ENV['APP_URL'] . "logo.png"; ?>" alt="logo" style="display: block; border: 0;" width="100"></a>
                                         331 E. Evelyn Avenue Mountain View CA 94041
                                         <br>
                                         <a href="#" style="color: #0c99d5;">Legal</a> • <a href="#" style="color: #0c99d5;">Privacy</a>

@@ -11,7 +11,7 @@ require '../vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable("../");
 $dotenv->load();
-$dotenv->required(['MAIL_HOST', 'MAIL_PORT', 'MAIL_USERNAME', 'MAIL_PASSWORD']);
+$dotenv->required(['MAIL_HOST', 'MAIL_PORT', 'MAIL_USERNAME', 'MAIL_PASSWORD','FROM_EMAIL','FROM_NAME']);
 
 function SendWelcomeMail($from, $to, $subject = "Welcome to Qwiki!")
 {
@@ -26,10 +26,9 @@ function SendWelcomeMail($from, $to, $subject = "Welcome to Qwiki!")
         $mail->Password = $_ENV["MAIL_PASSWORD"];
         $mail->SMTPSecure = 'tls';
         $mail->Port = $_ENV["MAIL_PORT"];
-        // $mail->SMTPDebug = 3;
-        $mail->setFrom($from["email"], $from["name"]);
+        $mail->SMTPDebug = 3;
+        $mail->setFrom($_ENV["FROM_EMAIL"], $_ENV["FROM_NAME"]);
         $mail->addAddress($to["email"], $to["name"]);
-        $mail->addReplyTo($from["email"], $from["name"]);
         $mail->isHTML(true);
         $mail->Subject = $subject;
         $user_name  = urlencode($to["name"]);
