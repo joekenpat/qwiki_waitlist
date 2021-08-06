@@ -333,9 +333,9 @@ $dotenv->required(['APP_URL']);
                     <br>
                     <br>
                     <a href="#" target="_blank"><img src="<?php echo $_ENV['APP_URL'] . "logo.png"; ?>" alt="logo" style="display: block; border: 0;" width="100"></a>
-                    331 E. Evelyn Avenue Mountain View CA 94041
+                    COMING SOON!!!
                     <br>
-                    <a href="#" style="color: #0c99d5;">Legal</a> • <a href="#" style="color: #0c99d5;">Privacy</a>
+                    <img src="<?php echo $_ENV['APP_URL'] . "playstore_download_button.png"; ?>" alt="logo" style="display: block; border: 0;" width="100"> • <img src="<?php echo $_ENV['APP_URL'] . "applestore_download_button.png"; ?>" alt="logo" style="display: block; border: 0;" width="100">
 
                   </td>
                 </tr>
